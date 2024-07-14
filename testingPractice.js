@@ -15,4 +15,28 @@ function reverseString(string) {
   return string;
 }
 
-export { capitalize, reverseString };
+function calculator(num1 = null, num2 = null) {
+  if (num1 === null || num2 === null) {
+    return "You have entered an invalid number";
+  }
+  function add() {
+    return num1 + num2;
+  }
+  function subtract() {
+    return num1 - num2;
+  }
+  function divide() {
+    return num1 / num2;
+  }
+  function multiply() {
+    return num1 * num2;
+  }
+  return {
+    add,
+    subtract,
+    divide,
+    multiply,
+  };
+}
+
+export { capitalize, reverseString, calculator };

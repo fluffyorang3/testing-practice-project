@@ -1,4 +1,4 @@
-import { capitalize, reverseString } from "./testingPractice.js";
+import { capitalize, reverseString, calculator } from "./testingPractice.js";
 
 test("capitalizes first letter", () => {
   expect(capitalize("test")).toBe("Test");
@@ -6,4 +6,8 @@ test("capitalizes first letter", () => {
 
 test("reverses text", () => {
   expect(reverseString("Test")).toBe("tseT");
+});
+
+test("Calculate numbers", () => {
+  expect(calculator(3, 2).add()).toBe(5);
 });
