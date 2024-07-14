@@ -7,4 +7,12 @@ function capitalize(string) {
   return string;
 }
 
-export { capitalize };
+function reverseString(string) {
+  if (string == null) {
+    return "No string entered";
+  }
+  string = string.split("").reverse().join("");
+  return string;
+}
+
+export { capitalize, reverseString };
