@@ -71,4 +71,31 @@ function caesarCipher(string, key) {
 
 caesarCipher("This is a message", 4);
 
-export { capitalize, reverseString, calculator, caesarCipher };
+function analyzeArray(array) {
+  function average() {
+    let sum = 0;
+    for (let i = 0; i < array.length; i++) {
+      sum += array[i];
+    }
+    return Math.round(sum / array.length);
+  }
+  function min() {
+    return Math.min(...array);
+  }
+  function max() {
+    return Math.max(...array);
+  }
+  function length() {
+    return array.length;
+  }
+  return {
+    average,
+    min,
+    max,
+    length,
+  };
+}
+
+analyzeArray([1, 3, 6, 2, 1, 7]).average();
+
+export { capitalize, reverseString, calculator, caesarCipher, analyzeArray };

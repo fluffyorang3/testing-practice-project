@@ -3,6 +3,7 @@ import {
   reverseString,
   calculator,
   caesarCipher,
+  analyzeArray,
 } from "./testingPractice.js";
 
 test("capitalizes first letter", () => {
@@ -19,4 +20,8 @@ test("Calculate numbers", () => {
 
 test("Cypher", () => {
   expect(caesarCipher("This is a message", 4)).toBe("Tlmw mw e qiwweki");
+});
+
+test("Array analyzer", () => {
+  expect(analyzeArray([1, 3, 6, 2, 1, 7]).length()).toBe(6);
 });
