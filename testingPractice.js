@@ -38,5 +38,37 @@ function calculator(num1 = null, num2 = null) {
     multiply,
   };
 }
+function caesarCipher(string, key) {
+  let charSpace = "abcdefghijklmnopqrstuvwx";
+  let charSpaceArray = charSpace.split("");
+  let shiftedCharSpace = "abcdefghijklmnopqrstuvwx";
+  let shiftedCharSpaceArray = shiftedCharSpace.split("");
 
-export { capitalize, reverseString, calculator };
+  let stringArray = string.split("");
+
+  let finalMessageArray = [];
+
+  for (let i = 0; i < key; i++) {
+    let firstElement = shiftedCharSpaceArray.shift();
+    shiftedCharSpaceArray.push(firstElement);
+  }
+
+  for (let i = 0; i < stringArray.length; i++) {
+    if (shiftedCharSpaceArray.includes(stringArray[i])) {
+      let currentCharacter = stringArray[i];
+      let normalIndex = charSpaceArray.indexOf(currentCharacter);
+      let outputCharacter = shiftedCharSpaceArray[normalIndex];
+      finalMessageArray.push(outputCharacter);
+      continue;
+    }
+    finalMessageArray.push(stringArray[i]);
+  }
+
+  let finalString = finalMessageArray.join("");
+  console.log(finalString);
+  return finalString;
+}
+
+caesarCipher("This is a message", 4);
+
+export { capitalize, reverseString, calculator, caesarCipher };
